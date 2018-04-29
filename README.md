@@ -249,6 +249,7 @@ Originally by "pmbuko" with modifications by Romulo
 Updated by Brett Terpstra 2012
 Updated by Mathias Törnblom 2015 to support V3 in El Capitan and still keep backwards compatibility
 Updated by Andrei Miclaus 2017 to support V4 in Sierra
+Updated by Tim Fletcher 2018 to support V5 in High Sierra
 *)
 
 tell application "Mail" to quit
@@ -257,6 +258,7 @@ set mail_version to "V2"
 considering numeric strings
     if "10.10" <= os_version then set mail_version to "V3"
     if "10.12" < os_version then set mail_version to "V4"
+    if "10.13" < os_version then set mail_version to "V5"
 end considering
 
 set sizeBefore to do shell script "ls -lnah ~/Library/Mail/" & mail_version & "/MailData | grep -E 'Envelope Index$' | awk {'print $5'}"
